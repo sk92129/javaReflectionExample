@@ -7,11 +7,18 @@ public class MainExample {
 
         for(Method method : methods){
             System.out.println("method = " + method.getName());
+            System.out.println("    parameter count = " + method.getParameterCount());
+            Class<?>[] paramTypes = method.getParameterTypes();
+            for (Class<?> className: paramTypes){
+                System.out.println("    parameter type  = " + className);
+            }
+
+            System.out.println("================================================");
         }
     }
 
 
-    public String sayHelloWorld() {
+    public String sayHelloWorld(String foo, int num) {
         return "HelloWorld";
     }
 }
